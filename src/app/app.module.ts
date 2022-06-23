@@ -4,6 +4,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
@@ -15,7 +16,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 import { AppComponent } from './app.component';
 
 // Import containers
-import { LayoutComponent } from './containers';
+import { DefaultLayoutComponent } from './containers';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
@@ -23,7 +24,7 @@ import { SharedModule } from "./views/shared/shared.module";
 
 
 const APP_CONTAINERS = [
-  LayoutComponent
+  DefaultLayoutComponent
 ];
 
 import {
@@ -41,8 +42,8 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-import { HeaderComponent } from './containers/header/header.component';
-import { FooterComponent } from './containers/footer/footer.component';
+import { DefaultHeaderComponent } from './containers/default-header/default-header.component';
+import { DefaultFooterComponent } from './containers/default-footer/default-footer.component';
 
 @NgModule({
   imports: [
@@ -67,8 +68,8 @@ import { FooterComponent } from './containers/footer/footer.component';
     ...APP_CONTAINERS,
     P404Component,
     P500Component,
-    HeaderComponent,
-    FooterComponent,
+    DefaultHeaderComponent,
+    DefaultFooterComponent,
   ],
   providers: [
     {
