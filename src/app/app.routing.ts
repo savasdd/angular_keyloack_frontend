@@ -9,23 +9,18 @@ import { LoginComponent } from './views/login/login.component';
 import { LogoutComponent } from './views/login/logout/logout.component';
 
 export const routes: Routes = [
- // { path: '', redirectTo: 'login', pathMatch: 'full', },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full', },
+  // { path: '', redirectTo: 'login', pathMatch: 'full', },
+  { path: '', redirectTo: 'home', pathMatch: 'full', },
   { path: '404', component: P404Component, data: { title: 'Page 404' } },
   { path: '500', component: P500Component, data: { title: 'Page 500' } },
-  { path: 'login', component: LoginComponent, data: { title: 'Login Page' } },
-  { path: 'logout', component: LogoutComponent, data: { title: 'Login Page' } },
+  //{ path: 'login', component: LoginComponent, data: { title: 'Login Page' } },
+  //{ path: 'logout', component: LogoutComponent, data: { title: 'Login Page' } },
   {
     path: '', component: DefaultLayoutComponent, data: { title: 'Ana Sayfa' },
     children:
       [
-        { path: 'Personels', loadChildren: () => import('./views/shared/shared.module').then(m => m.SharedModule) },
-        { path: 'Genels', loadChildren: () => import('./views/shared/shared.module').then(m => m.SharedModule) },
-        { path: 'Logs', loadChildren: () => import('./views/shared/shared.module').then(m => m.SharedModule) },
-        { path: 'Dinamiks', loadChildren: () => import('./views/shared/shared.module').then(m => m.SharedModule) },
-        { path: 'Sistems', loadChildren: () => import('./views/shared/shared.module').then(m => m.SharedModule) },
-        { path: 'Rapors', loadChildren: () => import('./views/shared/shared.module').then(m => m.SharedModule) },
-        { path: 'dashboard', loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule) },
+        { path: 'home', loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule) },
+        { path: 'admin', loadChildren: () => import('./views/shared/shared.module').then(m => m.SharedModule) },
       ]
   },
   { path: '**', component: P404Component }
